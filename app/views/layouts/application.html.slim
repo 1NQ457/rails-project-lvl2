@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title
+      | RailsProjectLvl2
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.d-flex.flex-column.h-100
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      = link_to root_path, class: 'navbar-brand'
+        | Collective Blog
+      div.navbar-collapse.collapse#navbarSupportedContent
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            = link_to new_post_path, class: 'nav-link'
+              | Добавить статью
+    div.container.my-4
+      = yield
