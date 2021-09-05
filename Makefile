@@ -6,4 +6,4 @@ lint:
 	bundle exec rubocop
 
 test:
-	bin/rails test $(ARGS)
+	bin/rails test
