@@ -1,0 +1,22 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'bin/**'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+  NewCops: enable
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  SafeAutoCorrect: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+
