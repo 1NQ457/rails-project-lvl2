@@ -1,0 +1,13 @@
+ol.breadcrumb
+  li.breadcrumb-item
+    = link_to root_path
+      | All Posts
+  li.breadcrumb-item.active
+    | Category
+div.row.gx-4.gx-lg-5.justify-content-center
+  div.col-sm-10
+    h1= @post.title
+
+    hr
+
+    p= @post.body
