@@ -34,15 +34,15 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     attrs = {
       title: 'Title',
-      body: 'Body'
+      body: 'Body',
+      post_category_id: @post.post_category_id
     }
 
-    post posts_path, params: { post: attrs }
+    assert_difference('Post.count') do
+      post posts_path, params: { post: attrs }
+    end
 
-    post = Post.find_by(title: attrs[:title])
-
-    assert post
-    assert_redirected_to post_path(post)
+    assert_redirected_to post_path(Post.last)
   end
 
   test 'should update post' do

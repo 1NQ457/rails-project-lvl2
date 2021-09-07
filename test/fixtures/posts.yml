@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: MyString1
+  body: MyText1
   creator: one
+  post_category: one
 
 two:
-  title: MyString
-  body: MyText
+  title: MyString2
+  body: MyText2
   creator: one
+  post_category: two
