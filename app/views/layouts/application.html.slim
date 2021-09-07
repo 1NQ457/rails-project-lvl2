@@ -9,22 +9,24 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body.d-flex.flex-column.h-100
-    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
-      = link_to root_path, class: 'navbar-brand'
-        | Collective Blog
-      div#navbarSupportedContent.navbar-collapse.collapse
-        ul.navbar-nav.ml-auto
-          - if user_signed_in?
-              li.nav-item
-                = link_to new_post_path, class: 'nav-link'
-                  | Добавить статью
-              li.nav-item
-                = link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item nav-link link-dark'
-          - else
-              li
-                = link_to 'Sign in', new_user_session_path, class: 'nav-link link-dark'
-              li
-                = link_to 'Sign up', new_user_registration_path, class: 'nav-link link-dark'
+    header
+      nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+        .container-fluid
+          = link_to root_path, class: 'navbar-brand'
+            | Collective Blog
+          div#navbarCollapse.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto
+              - if user_signed_in?
+                  li.nav-item
+                    = link_to new_post_path, class: 'nav-link'
+                      | Добавить статью
+                  li.nav-item
+                    = link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item nav-link link-dark'
+              - else
+                  li.nav-item
+                    = link_to 'Sign in', new_user_session_path, class: 'nav-link link-dark'
+                  li.nav-item
+                    = link_to 'Sign up', new_user_registration_path, class: 'nav-link link-dark'
     div.container.my-4
       - if flash[:notice]
       .container.my-2
