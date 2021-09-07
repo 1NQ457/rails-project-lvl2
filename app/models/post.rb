@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :creator, class_name: 'User', foreign_key: :user_id, inverse_of: :posts
+  belongs_to :post_category, inverse_of: :posts
 
   validates :title, :body, presence: true
 end

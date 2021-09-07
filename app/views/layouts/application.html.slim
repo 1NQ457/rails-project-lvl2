@@ -29,10 +29,10 @@ html
                     = link_to 'Sign up', new_user_registration_path, class: 'nav-link link-dark'
     div.container.my-4
       - if flash[:notice]
-      .container.my-2
-        - flash.each do |_type, msg|
-          .alert.alert-info
-            = msg
+        .container.my-2
+          - flash.each do |_type, msg|
+            .alert.alert-info
+              = msg
       - if flash[:alert]
         .container.my-2
           - flash.each do |_type, msg|
