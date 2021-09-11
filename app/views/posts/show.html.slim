@@ -1,17 +1,29 @@
-ol.breadcrumb
+
+ol.breadcrumb.bg-light.p-3
   li.breadcrumb-item
     = link_to root_path
       | All Posts
   li.breadcrumb-item.active
     = @post.post_category.name
-div.row.gx-4.gx-lg-5.justify-content-center
-  div.col-sm-10
-    h1= @post.title
-
-    hr
-
-    p= @post.body
-
-    hr
-
+.row.justify-content-center.mt-4
+  article.col-12.col-lg-4.col-xl-8
+    h1.mb-4.mb-lg-5
+      = @post.title
+    p.text-break
+      = @post.body
+    .d-flex.align-items-center.mt-5
+      span.me-3
+        = @post.creator.email
+      span
+        = time_ago_in_words(@post.created_at)
+      .ms-auto#likes-section
+        span.me-3
+        | 1
     = link_to 'Edit', edit_post_path(@post)
+- if user_signed_in?
+  .lead.m3
+    | Комментарий
+  = render 'posts/comments/form', comment: @comment, url: post_comments_path(@post)
+= render partial: 'posts/comments/comment', collection: @post.comments.filter { |comment| comment.is_root? && !comment.id.nil? }
+
+

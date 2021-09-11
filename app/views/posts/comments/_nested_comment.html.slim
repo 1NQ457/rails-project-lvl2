@@ -1,0 +1,23 @@
+
+.ms-4
+  hr.my-2
+  .d-flex(id="comment-#{nested_comment.id}")
+    .mr-auto
+      span.me-2
+        = nested_comment.content
+      span.me-1
+        = nested_comment.creator.email
+      span.text-muted
+        = time_ago_in_words(nested_comment.created_at)
+  hr.my-2
+  .mb-2
+    a.d-block.small.text-muted.collapsed(data-bs-toggle="collapse" href="#new_post_comment-#{nested_comment.id}" aria-expanded="false" role="button" aria-controls="#new_post_comment-#{nested_comment.id}")
+      | Ответить
+    .collapse(id="new_post_comment-#{nested_comment.id}")
+      - if user_signed_in?
+        = render 'posts/comments/form', comment: nested_comment.post.comments.new, url: post_comments_path(nested_comment.post), parent_id: nested_comment.id
+      - else
+        = link_to 'Sign in', new_user_session_path, class: 'nav-link link-dark'
+
+  - if nested_comment.has_children?
+    = render partial: 'posts/comments/nested_comment', collection: nested_comment.children
