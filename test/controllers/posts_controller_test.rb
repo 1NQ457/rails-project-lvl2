@@ -54,6 +54,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     patch post_path(@post), params: { post: attrs }
 
+    assert_equal @post.reload.body, attrs[:body]
     assert_redirected_to post_path(@post)
   end
 
