@@ -6,7 +6,7 @@
       = post.body
     .card-text.text-end.mb-1
       small.me-3.text-muted
-        | Понравилось: 4
+        = post.likes.size
       small.me-3.text-muted
         = time_ago_in_words(post.created_at)
       small.text-muted
