@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only: %i[create update], module: 'posts'
+    resources :likes, only: %i[create destroy], module: 'posts'
   end
 end
