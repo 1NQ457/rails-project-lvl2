@@ -1,0 +1,23 @@
+en:
+  posts:
+    index:
+      header: Hexlet Blog
+    show:
+      all_posts: All Posts
+      edit: Edit Post
+      comment: Comment
+      time_ago: "%{date} ago"
+    edit:
+      header: Edit Post
+    new:
+      header: New Post
+    post:
+      time_ago: "%{date} ago"
+      likes_count: "Likes: %{count}"
+    comments:
+      comment:
+        time_ago: "%{date} ago"
+        respond: Respond
+      nested_comment:
+        respond: Respond
+      

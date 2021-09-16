@@ -2,7 +2,7 @@
 ol.breadcrumb.bg-light.p-3
   li.breadcrumb-item
     = link_to root_path
-      | All Posts
+      = t('.all_posts')
   li.breadcrumb-item.active
     = @post.post_category.name
 .row.justify-content-center.mt-4
@@ -15,7 +15,7 @@ ol.breadcrumb.bg-light.p-3
       span.me-3
         = @post.creator.email
       span
-        = time_ago_in_words(@post.created_at)
+        = t('.time_ago', date: time_ago_in_words(@post.created_at))
       .ms-auto#likes-section
         span.me-3
         - if @current_user_like
@@ -27,10 +27,10 @@ ol.breadcrumb.bg-light.p-3
             span.text-muted.me-2= @post.likes.count
             i.bi-heart-fill
 
-    = link_to 'Edit', edit_post_path(@post)
+    = link_to t('.edit'), edit_post_path(@post)
 - if user_signed_in?
   .lead.m3
-    | Комментарий
+    = t('.comment')
   = render 'posts/comments/form', comment: @comment, url: post_comments_path(@post)
 = render partial: 'posts/comments/comment', collection: @post.comments.filter { |comment| comment.is_root? && !comment.id.nil? }
 

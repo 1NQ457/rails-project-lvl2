@@ -4,7 +4,7 @@
       span.font-weight-bold
         = comment.creator.email
       span.mx-2.font-weight-light
-        = time_ago_in_words(comment.created_at)
+        = t('.time_ago', date: time_ago_in_words(comment.created_at))
   .card-body.d-flex
     .w-100
       .mb-3
@@ -15,7 +15,7 @@
   hr.my-2
   .mb-2.mx-4
     a.d-block.small.text-muted.collapsed(data-bs-toggle="collapse" href="#new_post_comment-#{comment.id}" aria-expanded="false" role="button" aria-controls="#new_post_comment-#{comment.id}")
-      | Ответить
+      = t('.respond')
     .collapse(id="new_post_comment-#{comment.id}")
       - if user_signed_in?
         = render 'posts/comments/form', comment: comment.post.comments.new, url: post_comments_path(comment.post), parent_id: comment.id

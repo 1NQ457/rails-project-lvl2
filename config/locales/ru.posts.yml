@@ -1,0 +1,23 @@
+ru:
+  posts:
+    index:
+      header: Блог Хекслета
+    show:
+      all_posts: Все статьи
+      edit: Изменить статью
+      comment: Комментарий
+      time_ago: "%{date} назад"
+    edit:
+      header: Редактировать Статью
+    new:
+      header: Новая Статья
+    post:
+      time_ago: "%{date} назад"
+      likes_count: "Понравилось: %{count}"
+    comments:
+      comment:
+        time_ago: "%{date} назад"
+        respond: Ответить
+      nested_comment:
+        respond: Ответить
+        

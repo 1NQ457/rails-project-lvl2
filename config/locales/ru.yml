@@ -1,0 +1,14 @@
+ru:
+  layouts:
+    application:
+      title: Локализация
+      header: Коллективный блог
+      sign_in: Вход
+      sign_up: Регистрация
+      sign_out: Выйти
+      new_post: Добавить статью
+  show: Показать
+  edit: Изменить
+  destroy: Удалить
+  destroy_confirmation: Вы уверены?
+  back: Назад

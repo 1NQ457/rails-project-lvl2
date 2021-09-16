@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      title: Localization
+      header: Collective Blog
+      sign_in: Sign in
+      sign_up: Sign up
+      sign_out: Sign out
+      new_post: New Post
+  show: Show
+  edit: Edit
+  destroy: Delete
+  destroy_confirmation: Are you sure?
+  back: Back
