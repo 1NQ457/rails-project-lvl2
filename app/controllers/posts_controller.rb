@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: t('flash.post_created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update post_params
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: t('flash.post_updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to posts_path, notice: t('flash.post_destroyed')
   end
 
   private

@@ -12,3 +12,7 @@ ru:
   destroy: Удалить
   destroy_confirmation: Вы уверены?
   back: Назад
+  flash:
+    post_created: Статья создана
+    post_updated: Статья обновлена
+    post_destroyed: Статья удалена

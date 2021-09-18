@@ -43,3 +43,7 @@ en:
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
+  flash:
+    post_created: Post created
+    post_updated: Post updated
+    post_destroyed: Post destroyed
