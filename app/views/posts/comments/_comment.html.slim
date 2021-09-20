@@ -9,6 +9,9 @@
     .w-100
       .mb-3
         = comment.content
+      - if comment.creator == @current_user
+        small
+          = link_to t(:edit), edit_post_comment_path(@post, comment), class: 'me-2'
   - if comment.has_children?
     .small
       = render partial: 'posts/comments/nested_comment', collection: comment.children

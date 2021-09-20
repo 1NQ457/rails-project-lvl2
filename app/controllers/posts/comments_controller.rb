@@ -3,7 +3,7 @@
 class Posts::CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post
-  before_action :set_comment, only: %i[edit update destroy]
+  before_action :set_comment, only: %i[edit update]
 
   def create
     @comment = @post.comments.build(comment_params)
@@ -24,12 +24,6 @@ class Posts::CommentsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @comment.destroy
-
-    redirect_to post_path(@post)
   end
 
   private

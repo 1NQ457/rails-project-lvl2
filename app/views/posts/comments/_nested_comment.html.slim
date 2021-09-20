@@ -9,6 +9,9 @@
         = nested_comment.creator.email
       span.text-muted
         = l(nested_comment.created_at, format: :short)
+  - if nested_comment.creator == @current_user
+    small
+      = link_to t(:edit), edit_post_comment_path(@post, nested_comment), class: 'me-2'
   hr.my-2
   .mb-2
     a.d-block.small.text-muted.collapsed(data-bs-toggle="collapse" href="#new_post_comment-#{nested_comment.id}" aria-expanded="false" role="button" aria-controls="#new_post_comment-#{nested_comment.id}")

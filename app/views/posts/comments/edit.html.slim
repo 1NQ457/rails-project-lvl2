@@ -1,1 +1,3 @@
-lolo
+h1.h2.mb-4
+  = t('.header')
+= render 'posts/comments/form', comment: @comment, url: post_comment_path(@comment.post, @comment)
