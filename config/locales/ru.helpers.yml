@@ -1,0 +1,6 @@
+ru:
+  helpers:
+    submit:
+      post:
+        create: Создать Статью
+        update: Обновить Статью
