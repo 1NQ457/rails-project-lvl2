@@ -47,4 +47,5 @@ en:
     post_created: Post created
     post_updated: Post updated
     post_destroyed: Post destroyed
+    empty_comment: Comment should not be empty
     not_authorized: You are not authorized to perform this action.
