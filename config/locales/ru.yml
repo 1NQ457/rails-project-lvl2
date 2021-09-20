@@ -16,3 +16,4 @@ ru:
     post_created: Статья создана
     post_updated: Статья обновлена
     post_destroyed: Статья удалена
+    not_authorized: У вас недостаточно прав для этого действия

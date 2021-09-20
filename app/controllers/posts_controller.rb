@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authorize_post, only: %i[edit update destroy]
 
   def index
     @posts = Post.all
@@ -50,5 +51,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :post_category_id)
+  end
+
+  def authorize_post
+    authorize @post
   end
 end
