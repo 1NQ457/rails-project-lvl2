@@ -21,11 +21,11 @@ ol.breadcrumb.bg-light.p-3
         - if @current_user_like
           = link_to post_like_path(@post, @current_user_like), method: :delete, class: 'text-decoration-none link-danger' do
             span.text-muted.me-2= @post.likes.count
-            i.bi-heart-fill
+            i.fas.fa-heart
         - else
           = link_to post_likes_path(@post), method: :post, class: 'text-decoration-none link-secondary' do
             span.text-muted.me-2= @post.likes.count
-            i.bi-heart-fill
+            i.fas.fa-heart
 
     = link_to t('.edit'), edit_post_path(@post)
 - if user_signed_in?

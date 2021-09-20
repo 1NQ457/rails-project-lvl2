@@ -13,7 +13,7 @@ ru:
       header: Новая Статья
     post:
       time_ago: "%{date} назад"
-      likes_count: "Понравилось: %{count}"
+      likes_count: "Понравилось: %{count} "
     comments:
       comment:
         time_ago: "%{date} назад"
