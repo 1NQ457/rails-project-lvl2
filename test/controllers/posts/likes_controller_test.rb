@@ -12,7 +12,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
     post = posts(:two)
 
     assert post post_likes_path(post)
-    assert_equal 1, post.reload.likes.size
+    assert_equal 2, post.reload.likes.size
     assert_redirected_to post_path(post)
   end
 
