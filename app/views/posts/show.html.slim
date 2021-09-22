@@ -20,11 +20,11 @@ ol.breadcrumb.bg-light.p-3
         span.me-3
         - if @current_user_like
           = link_to post_like_path(@post, @current_user_like), method: :delete, class: 'text-decoration-none link-danger' do
-            span.text-muted.me-2= @post.likes.count
+            span.text-muted.me-2= @post.likes.size
             i.fas.fa-heart
         - else
           = link_to post_likes_path(@post), method: :post, class: 'text-decoration-none link-secondary' do
-            span.text-muted.me-2= @post.likes.count
+            span.text-muted.me-2= @post.likes.size
             i.fas.fa-heart
     - if @post.creator == @current_user
       small
@@ -34,6 +34,6 @@ ol.breadcrumb.bg-light.p-3
   .lead.m3
     = t('.comment')
   = render 'posts/comments/form', comment: @comment, url: post_comments_path(@post)
-= render partial: 'posts/comments/comment', collection: @post.comments.filter { |comment| comment.is_root? && !comment.id.nil? }
+= render partial: 'posts/comments/comment', collection: @comment_collection
 
 

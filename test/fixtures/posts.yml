@@ -5,9 +5,11 @@ one:
   body: MyText1
   creator: one
   post_category: one
+  post_likes_count: 1
 
 two:
   title: MyString2
   body: MyText2
   creator: one
   post_category: two
+  post_likes_count: 1

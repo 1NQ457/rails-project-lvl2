@@ -11,10 +11,8 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   test 'should_create' do
     post = posts(:two)
 
-    assert_difference('PostLike.count') do
-      post post_likes_path(post)
-    end
-
+    assert post post_likes_path(post)
+    assert_equal 1, post.reload.likes.size
     assert_redirected_to post_path(post)
   end
 
@@ -22,10 +20,8 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
     like = post_likes(:one)
     post = posts(:one)
 
-    assert_difference('PostLike.count', -1) do
-      delete post_like_path(post, like)
-    end
-
+    assert delete post_like_path(post, like)
+    assert_equal 0, post.reload.likes.size
     assert_redirected_to post_path(post)
   end
 end
