@@ -8,12 +8,8 @@ class Posts::CommentsController < ApplicationController
   def create
     @comment = @post.comments.build(comment_params)
     @comment.creator = current_user
-    if @comment.save
-      redirect_to post_path(@post)
-    else
-      flash.now[:notice] = t('flash.empty_comment')
-      render 'posts/show', status: :unprocessable_entity
-    end
+    flash[:alert] = t('flash.empty_comment') unless @comment.save
+    redirect_to post_path(@post)
   end
 
   def edit; end
