@@ -32,7 +32,7 @@
 en:
   layouts:
     application:
-      title: Localization
+      title: Collective Blog
       header: Collective Blog
       sign_in: Sign in
       sign_up: Sign up

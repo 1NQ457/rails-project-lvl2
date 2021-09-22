@@ -1,7 +1,7 @@
 ru:
   layouts:
     application:
-      title: Локализация
+      title: Коллективный блог
       header: Коллективный блог
       sign_in: Вход
       sign_up: Регистрация
