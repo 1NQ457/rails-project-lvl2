@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = @post.comments.build
+    @comment_collection = @post.comments.filter { |comment| comment.is_root? && !comment.id.nil? }
     @current_user_like = @post.likes.find_by(user: current_user)
   end
 
